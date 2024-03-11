@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /repositories/
-title: repositories
-description: Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.
+title: My Repos
+description: Welcome to "My Repos" – a dive into my open-source journey. This repository encapsulates my current exploration in the tech space, offering a glimpse into my work and the learnings garnered along the way. It's not just code; it's the story of my dedication to understanding and improving upon the technologies we interact with daily. Feel free to explore, provide feedback, or contribute. Together, we can refine it further, one commit at a time.
 nav: true
 nav_order: 4
 ---

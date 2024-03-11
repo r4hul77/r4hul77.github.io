@@ -1,25 +1,24 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: <i><b>"</b>If giving up is an option, you aren't evaluating the options right<b>"</b></i> 
+
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: r4hul.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  more_info:
+    <p>Manhattan, Kansas 66502</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+In the heart of Hyderabad, India, my early life was a kaleidoscope of vibrant experiences. Yet, destiny whisked me across oceans to the United States, with dreams of mastering mechanical engineering. This ambition, however, was merely the prelude to a deeper passion I discovered: Robotics. The magic of animating the physical world through digital commands captivated me, driving me into the arms of controls, modeling, and simulation at Cleveland State University's CRM Lab.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My quest didn't halt there. From the energy of startups to Caterpillar's might, my path was rich with learning. It was amidst the semi-controlled chaos of agriculture that I found my true purpose, spotting a crucial void in robotics. Driven to bridge this gap, I embarked on a PhD journey in Biology and Agricultural Engineering at Kansas State University, with the Farms Lab serving as my arena to unravel agriculture's complexities.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Away from the rigor of research and innovation, I'm a soul fueled by literature, photography, and culinary adventures. My odyssey from Hyderabad's embrace to America's vast landscapes embodies my unyielding zeal for exploration and enlightenment.
