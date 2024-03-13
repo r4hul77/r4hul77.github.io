@@ -3,3 +3,10 @@ github_users:
 
 github_repos:
   - r4hul77/odrive_can
+  - r4hul77/Bayesian_Calibration
+  - r4hul77/Robust-Passivity-Based-Regenerative-Control
+  - r4hul77/AI_Pacman
+  - r4hul77/Kinematics-Estimation-Puma
+  - r4hul77/SLS
+  - r4hul77/farms_lab_utils
+
