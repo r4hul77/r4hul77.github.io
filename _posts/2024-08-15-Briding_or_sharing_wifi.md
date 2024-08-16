@@ -1,0 +1,46 @@
+---
+layout: post
+title: Sharing Internet Connection with Embedded Devices: A Quick Guide to Bridging and NAT
+date: 2024-08-15 11:40:16
+description: A Quick Guide to Sharing WiFi
+tags: Robotics Networking debugging
+categories: Jetson Pi
+---
+
+As an engineer working with embedded devices, I've often encountered situations where I needed to update Docker images on devices like the Jetson Xavier, which lacked a WiFi card due to size constraints in our DAQ kit. After hours of searching for a solution, I've compiled this guide to help others facing similar challenges.
+There are two main methods to share your laptop's internet connection with an embedded device connected via Ethernet:
+
+1. Bridging: This method places the embedded device on the same local subnet as your laptop.
+2. NAT (Network Address Translation): Your laptop acts as a router, forwarding traffic between networks.
+
+### Bridging
+
+On your laptop, run the following commands:
+```bash
+brctl addbr mybridge
+brctl addif mybridge eth0
+brctl addif mybridge wlan0
+```
+
+**Note:** This method may not work with all WiFi cards. If you encounter issues, delete the bridge using ```brctl del mybridge``` and proceed to the NAT method.
+
+### NAT
+
+#### 1. Enable IP forwarding on your laptop:
+``` bash
+echo 1 > /proc/sys/net/ipv4/ip_forward
+```
+For IPv6, replace ipv4 with ipv6 in the command.
+#### 2. Set up iptables rules: 
+```bash
+iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+iptables -A FORWARD -i wlan0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i eth0 -o wlan0 -j ACCEPT
+```
+#### 3. Configure the gateway on your embedded device (Xavier or Raspberry Pi):
+```bash
+ route add default gw 192.168.1.254 eth0
+```
+#### 4. Test it by quickly pining an external ip address
+With these steps, you should be able to run ```sudo apt update``` and resolve any issues without reinstalling the WiFi card on your embedded device.
+This guide provides a quick and efficient solution for sharing internet connections with embedded devices, saving time and effort in development and testing scenarios.
