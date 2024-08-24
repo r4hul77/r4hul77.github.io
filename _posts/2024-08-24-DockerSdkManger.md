@@ -13,9 +13,12 @@ NVIDIA's Jetson series represents the cutting edge of embedded computing, offeri
 
 In this guide, I'll show you how to bypass this limitation by setting up a Docker container with a GUI, allowing you to flash your Jetson device regardless of your host Linux distribution. Let's dive in!
 
+## Step 0: Install Required Components on Host
+We need to install `binfmts` by running `sudo apt install binfmts-support`.
+
 ## Step 1: Download SDKManager
 
-First, download the latest version of SDKManager from the [NVIDIA Developer website](https://developer.nvidia.com/sdk-manager). Rename the file to `sdkmanager.deb` for convenience.
+Download the latest version of SDKManager from the [NVIDIA Developer website](https://developer.nvidia.com/sdk-manager). Rename the file to `sdkmanager.deb` for convenience.
 
 ## Step 2: Build the Docker Image
 
@@ -75,7 +78,9 @@ Next, we'll create a Docker image that can run SDKManager with a GUI interface. 
     # ********************************************************
     # * Anything else you want to do like clean up goes here *
     # ********************************************************
-
+    
+    RUN printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
+    RUN apt-get -y install apt-utils usbutils
     # [Optional] Set the default user. Omit if you want to keep the default as root.
     USER $USERNAME
     ```
