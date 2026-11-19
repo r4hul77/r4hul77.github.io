@@ -32,6 +32,7 @@ on:
     paths:
       - "assets/**"
       - "**.html"
+      - "_bibliography/**"
       - "**.js"
       - "**.liquid"
       - "**/*.md"
